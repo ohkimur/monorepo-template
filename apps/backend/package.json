@@ -1,12 +1,7 @@
 {
-  "name": "@monorepo/shared",
-  "version": "0.0.1",
+  "name": "@monorepo/backend",
+  "version": "0.0.0",
   "private": true,
-  "description": "Shared interfaces and functions",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ohkimur/monorepo-template"
-  },
   "sideEffects": false,
   "exports": {
     "import": "./dist/esm/index.js",
@@ -23,8 +18,8 @@
     "build": "pnpm clean && pnpm compile",
     "clean": "shx rm -rf dist",
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "format": "prettier --write \"./src/**/*.{cjs,js,jsx,ts,tsx,css,sass,scss}\" --config ./.prettierrc.cjs",
-    "lint:fix": "eslint --fix \"./src/**/*.{cjs,js,jsx,ts,tsx}\"",
+    "format": "prettier --write \"./**/*.{cjs,js,jsx,ts,tsx,css,sass,scss}\" --config ./.prettierrc.cjs",
+    "lint:fix": "eslint --fix \"./**/*.{cjs,js,jsx,ts,tsx}\"",
     "lint:staged": "lint-staged"
   },
   "lint-staged": {
@@ -39,12 +34,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@monorepo/config": "workspace:0.0.1",
-    "@types/node": "^18.14.0",
+    "@monorepo/config": "workspace:^0.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "shx": "^0.3.4",
-    "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   }
 }

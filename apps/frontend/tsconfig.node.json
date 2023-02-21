@@ -1,4 +1,5 @@
 {
+  "extends": "@monorepo/config/typescript/base.json",
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
