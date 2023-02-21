@@ -3,22 +3,31 @@ const config = require('./root.cjs')
 module.exports = {
   ...config,
   root: false,
-  extends: [...config.extends, 'plugin:@typescript-eslint/recommended'],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    parserOptions: {
-      project: './tsconfig.json',
-    },
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2021,
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
+  plugins: ['react', '@typescript-eslint'],
   rules: {
-    '@typescript-eslint/no-unused-vars': [
-      'off',
-      { varsIgnorePattern: '^(?:h|_)$' },
-    ],
+    semi: ['error', 'never'],
+    'react/react-in-jsx-scope': 'off',
   },
-  plugins: ['@typescript-eslint'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 }

@@ -8,8 +8,10 @@
   "scripts": {
     "build": "turbo run build",
     "build:apps": "turbo run build --filter=\"./apps/*\"",
+    "build:frontend": "turbo run build --filter=\"./apps/frontend\"",
     "clean": "turbo run clean",
-    "dev": "turbo run dev --filter=@monorepo/core",
+    "dev": "turbo run dev",
+    "dev:frontend": "turbo run dev --filter=\"./apps/frontend\"",
     "format": "turbo run format --no-cache --concurrency=1",
     "lint:staged": "turbo run lint:staged --no-cache --concurrency=1",
     "lint:fix": "turbo run lint:fix --parallel",
