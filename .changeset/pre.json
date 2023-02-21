@@ -1,0 +1,17 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@monorepo/core": "0.0.0",
+    "@monorepo/config": "0.0.0",
+    "@monorepo/react": "0.0.0",
+    "@monorepo/vue": "0.0.0",
+    "@monorepo/angular": "0.0.0",
+    "@monorepo/tokens": "0.0.0",
+    "@monorepo/icons": "0.0.0",
+    "@monorepo/showcase": "0.0.0",
+    "@monorepo/icons-tailwind-plugin": "0.0.0",
+    "@monorepo/shared": "0.0.0"
+  },
+  "changesets": ["twenty-rockets-matter"]
+}

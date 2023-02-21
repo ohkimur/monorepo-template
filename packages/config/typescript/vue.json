@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Vue",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "importHelpers": true,
+    "declaration": true,
+    "removeComments": false,
+    "inlineSources": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "types": ["vue"],
+    "strictNullChecks": false
+  }
+}

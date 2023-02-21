@@ -1,0 +1,45 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": [
+        "dist/**",
+        "loader/**",
+        "www/**",
+        "tokens/**",
+        "ts/**",
+        "json/**",
+        "css/**",
+        "scss/**"
+      ],
+      "dependsOn": ["^build"]
+    },
+    "build:release": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build:release"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+    "storybook": {
+      "outputs": []
+    },
+    "format": {
+      "outputs": []
+    },
+    "lint:staged": {
+      "outputs": []
+    },
+    "lint:fix": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
