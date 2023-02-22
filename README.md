@@ -21,7 +21,7 @@
 
 ## Workspaces
 
-The project is organized in different workspaces. All apps are placed under the `apps` folder. All packages are placed under the `packages` folder.
+The project is organized as a [monorepo](https://monorepo.tools/) using [workspaces](https://pnpm.io/workspaces). All apps are placed under the `apps` folder. All packages are placed under the `packages` folder.
 
 ```
 ./
