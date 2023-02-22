@@ -1,5 +1,12 @@
 # Monorepo Template
 
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Workspaces](#workspaces)
+- [Development](#development)
+- [Build](#build)
+
 ## Technologies
 
 ### General
@@ -54,6 +61,11 @@ pnpm dev
 pnpm dev:frontend
 ```
 
+### Backend
+```sh
+pnpm dev:backend
+```
+
 
 ## Build
 
@@ -70,4 +82,10 @@ pnpm build:apps
 ### Frontend
 ```sh
 pnpm build:frontend
+```
+
+
+### Backend
+```sh
+pnpm build:backend
 ```
