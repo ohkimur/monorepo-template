@@ -18,8 +18,7 @@
     "build": "pnpm clean && pnpm compile",
     "clean": "shx rm -rf dist",
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
-    "compile:watch": "tsc -p tsconfig.json --watch",
-    "dev": "concurrently \"pnpm compile:watch\" \"nodemon -q dist/cjs/index.js\"",
+    "dev": "ts-node-dev --respawn ./src/index.ts",
     "format": "prettier --write \"./**/*.{cjs,js,jsx,ts,tsx,css,sass,scss}\" --config ./.prettierrc.cjs",
     "lint:fix": "eslint --fix \"./**/*.{cjs,js,jsx,ts,tsx}\"",
     "lint:staged": "lint-staged"
@@ -44,14 +43,13 @@
     "@monorepo/config": "workspace:^0.0.1",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
-    "concurrently": "^7.6.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "lint-staged": "^13.1.2",
-    "nodemon": "^2.0.20",
     "prettier": "^2.8.4",
     "shx": "^0.3.4",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.5"
   }
 }
