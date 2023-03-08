@@ -17,14 +17,28 @@
 - [Prettier](https://prettier.io/)
 - [Husky](https://typicode.github.io/husky)
 - [Changesets](https://github.com/changesets/changesets)
+- [Zod](https://zod.dev/)
+
+<!-- ### Testing (No tests for this app)
+- [Jest](https://jestjs.io/) ([Vitest](https://vitest.dev/) would be a good alternative)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Cypress](https://www.cypress.io/)
+- [Storybook](https://storybook.js.org/) -->
 
 ### Frontend
 - [React](https://reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
+- [Zustand](https://github.com/pmndrs/zustand/)
+<!-- - [React Hook Form](https://react-hook-form.com/) -->
+- [React Query](https://react-query-v3.tanstack.com/) ([SWR](https://swr.vercel.app/) would be a good alternative)
 
 ### Backend
+- [Node](https://nodejs.org/en/)
+- [REST](https://restfulapi.net/)
 - [Express](https://expressjs.com/)
+- [Prisma](https://www.prisma.io/)
+- [PlanetScale](https://planetscale.com/)
 
 ## Workspaces
 
