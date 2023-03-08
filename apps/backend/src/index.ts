@@ -25,8 +25,8 @@ app.use(
   })
 )
 app.use(json())
-app.use(urlencoded({ extended: true }))
 app.use(cookieParser())
+app.use(urlencoded({ extended: true }))
 
 app.get('/', (_req, res) => {
   res.send('Hey this is the todo-app API running 🥳')
