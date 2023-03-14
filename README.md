@@ -30,7 +30,7 @@
 - [Tailwindcss](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
 - [Zustand](https://github.com/pmndrs/zustand/)
-<!-- - [React Hook Form](https://react-hook-form.com/) -->
+- [React Hook Form](https://react-hook-form.com/)
 - [React Query](https://react-query-v3.tanstack.com/) ([SWR](https://swr.vercel.app/) would be a good alternative)
 
 ### Backend
