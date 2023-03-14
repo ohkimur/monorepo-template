@@ -102,6 +102,7 @@ importers:
   apps/frontend:
     specifiers:
       '@monorepo/config': workspace:^0.0.1
+      '@monorepo/shared': workspace:^0.0.1
       '@tanstack/react-query': ^4.26.1
       '@types/js-cookie': ^3.0.3
       '@types/react': ^18.0.28
@@ -139,6 +140,7 @@ importers:
       zustand: 4.3.6_react@18.2.0
     devDependencies:
       '@monorepo/config': link:../../packages/config
+      '@monorepo/shared': link:../../packages/shared
       '@types/js-cookie': 3.0.3
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
