@@ -2,6 +2,7 @@ import tailwind from 'eslint-plugin-tailwindcss'
 
 /** @type {import("@antfu/eslint-config").OptionsConfig} */
 export const sharedAntfuConfig = {
+  typescript: true,
   formatters: true,
   lessOpinionated: true,
 }
@@ -20,13 +21,11 @@ export const sharedEslintConfigs = [
       'dist',
       'out',
       'build',
-      'packages/icons/**/src/**/icons',
     ],
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
-      '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       'tailwindcss/no-custom-classname': 'off',
       'node/prefer-global/process': 'off',
