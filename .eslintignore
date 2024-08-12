@@ -1,9 +1,0 @@
-!.eslintrc.js
-
-.cache
-.turbo
-.next
-**/dist/**
-**/.dist/**
-**/build/**
-**/node_modules/**

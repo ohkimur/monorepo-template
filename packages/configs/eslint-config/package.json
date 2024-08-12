@@ -1,0 +1,41 @@
+{
+  "name": "@monorepo-template/eslint-config",
+  "type": "module",
+  "version": "0.1.2-alpha.0",
+  "private": true,
+  "exports": {
+    "./root": "./root.js",
+    "./base": "./base.js",
+    "./react": "./react.js",
+    "./preact": "./preact.js",
+    "./qwik": "./qwik.js",
+    "./solid": "./solid.js",
+    "./svelte": "./svelte.js",
+    "./vue": "./vue.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint.fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.25.1",
+    "@eslint-react/eslint-plugin": "^1.10.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^9.9.0",
+    "eslint-config-preact": "^1.4.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^2.0.12",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-qwik": "^1.8.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-solid": "^0.14.1",
+    "eslint-plugin-svelte": "^2.43.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "svelte-eslint-parser": "^0.41.0"
+  }
+}

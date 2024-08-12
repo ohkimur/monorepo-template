@@ -1,0 +1,3 @@
+{
+  "extends": "@monorepo-template/typescript-config/base.json"
+}

@@ -1,36 +1,46 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "ui": "tui",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "VITE_BUILD_TARGET"
+  ],
+  "tasks": {
     "build": {
-      "outputs": ["dist/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        "server/**",
+        ".svelte-kit/**"
+      ]
     },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
+    "lint": {
     },
-    "format": {
-      "outputs": []
-    },
-    "lint:staged": {
-      "outputs": []
-    },
-    "lint:fix": {
-      "outputs": []
+    "lint.fix": {
     },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
       "cache": true,
-      "dependsOn": ["^build"]
+      "persistent": true
     },
     "clean": {
       "cache": false
     },
-    "preview": {
-      "cache": true,
-      "dependsOn": ["^build"]
-    },
-    "db:seed": {
-      "cache": false
+    "generate": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "src/icons/**"
+      ]
     }
   }
 }

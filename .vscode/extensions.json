@@ -1,6 +1,17 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "bradlc.vscode-tailwindcss",
+    "unifiedjs.vscode-mdx",
+    "vitest.explorer",
+    "streetsidesoftware.code-spell-checker",
+    "usernamehw.errorlens",
+    "jock.svg",
+    "formulahendry.auto-rename-tag",
+    "wix.vscode-import-cost",
+    "yzhang.markdown-all-in-one",
+    "naumovs.color-highlight",
+    "gruntfuggly.todo-tree",
+    "github.vscode-pull-request-github"
   ]
 }

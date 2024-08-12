@@ -1,7 +1,6 @@
-.cache
-.turbo
-.next
-**/dist/**
-**/.dist/**
-**/build/**
-**/node_modules/**
+packages/icons/**/src/**/icons
+apps/**/server
+output
+out
+dist
+.svelte-kit

@@ -1,0 +1,65 @@
+name: Build and Publish
+
+on:
+  push:
+  pull_request:
+    branches: [main, next]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest]
+        node-version: [20.12.1]
+
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Setup modules cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          rm -rf **/node_modules
+          pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Test
+        run: pnpm test
+
+      # - name: Release or publish packages
+      #   id: changesets
+      #   uses: changesets/action@v1
+      #   with:
+      #     title: "chore: publish packages"
+      #     commit: "chore: publish packages"
+      #     publish: pnpm ci.publish
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

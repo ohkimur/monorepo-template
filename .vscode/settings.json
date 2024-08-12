@@ -1,20 +1,135 @@
 {
-  "typescript.enablePromptUseWorkspaceTsdk": true,
   "git.ignoreLimitWarning": true,
-  "tailwindCSS.experimental.classRegex": ["tw`([^`]*)"],
+  "typescript.format.enable": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
   },
-  "editor.formatOnSave": true,
-  "typescript.format.enable": true,
-  "html.customData": ["packages/core/dist/vscode-data.json"],
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  }
+  "cSpell.words": [
+    "antfu",
+    "monorepo-template",
+    "clsx",
+    "commitlint",
+    "composables",
+    "culori",
+    "duocolor",
+    "fontsource",
+    "hookform",
+    "lucide",
+    "nuxt",
+    "ohkimur",
+    "onwarn",
+    "partytown",
+    "preact",
+    "preinstall",
+    "qwik",
+    "singlefile",
+    "solidjs",
+    "svgson",
+    "tailwindcss",
+    "tsup",
+    "Vite",
+    "zustand"
+  ],
+  "vitest.disableWorkspaceWarning": true,
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "#18aa3a",
+    "background": "#00000000"
+  },
+
+  // ESLint
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "never"
+  },
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    {
+      "rule": "style/*",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "format/*",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-indent",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-spacing",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-spaces",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-order",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-dangle",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-newline",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*quotes",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*semi",
+      "severity": "off",
+      "fixable": true
+    }
+  ],
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ]
 }

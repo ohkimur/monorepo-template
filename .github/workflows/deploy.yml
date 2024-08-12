@@ -1,0 +1,66 @@
+# name: Deploy
+
+# on:
+#   workflow_run:
+#     workflows: [Build]
+#     branches: [main]
+#     types: [completed]
+
+# concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+# jobs:
+#   deploy:
+#     strategy:
+#       matrix:
+#         runs-on: [ubuntu-latest]
+#         node-version: [20.12.1]
+
+#     runs-on: ${{ matrix.runs-on }}
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+
+#       - name: Setup pnpm
+#         uses: pnpm/action-setup@v3
+#         with:
+#           version: 8
+
+#       - name: Setup Node ${{ matrix.node-version }}
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: "pnpm"
+
+#       - name: Setup modules cache
+#         uses: actions/cache@v4
+#         with:
+#           path: |
+#             node_modules
+#             */*/node_modules
+#           key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+#       - name: Install dependencies
+#         if: steps.cache.outputs.cache-hit != 'true'
+#         run: |
+#           rm -rf **/node_modules
+#           pnpm install
+
+#       - name: Build
+#         run: pnpm build
+
+#       - name: Authenticate with GCP
+#         uses: "google-github-actions/auth@v2"
+#         with:
+#           credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+
+#       - name: Deploy main app to GCP
+#         uses: "google-github-actions/upload-cloud-storage@v2"
+#         with:
+#           path: "./apps/main/dist"
+#           destination: "monorepo-template.io"
+#           parent: false
+#           headers: |-
+#             cache-control: "no-cache, no-store, must-revalidate"
